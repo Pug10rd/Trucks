@@ -1,15 +1,25 @@
+import Layout from "./components/ui/layout";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Catalog from "./pages/Catalog";
-import CamperDetails from "./pages/CamperDetails";
+import { lazy, Suspense } from "react";
+
+const HomePage = lazy(() => import("./pages/Home/HomePage"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage"));
+const CamperDetailsPage = lazy(() => import("./pages/CamperDetailsPage"));
+//const FavoritesPage = lazy(() => import("../../pages/FavoritesPage"));
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/catalog" element={<Catalog />} />
-      <Route path="/catalog/:id" element={<CamperDetails />} />
-    </Routes>
+    <Suspense fallback={null}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog/:id" element={<CamperDetailsPage />} />
+          {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
+          <Route path="*" element={<HomePage />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
 
