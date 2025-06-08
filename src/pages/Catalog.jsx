@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../redux/campersSlice";
 import CamperCard from "../components/CamperCard";
 import styled from "styled-components";
+import { Section, Title, Button } from "../styles/shared";
 
 const ITEMS_PER_PAGE = 4;
 
@@ -19,10 +20,8 @@ const Catalog = () => {
     setVisibleCount((prev) => prev + ITEMS_PER_PAGE);
   };
 
-  console.log(campers);
-
   return (
-    <Wrapper>
+    <Section>
       <Title>Available Campers</Title>
 
       {isLoading && <p>Loading...</p>}
@@ -36,23 +35,23 @@ const Catalog = () => {
           </CardGrid>
 
           {visibleCount < campers?.length && (
-            <LoadMoreButton onClick={handleLoadMore}>Load More</LoadMoreButton>
+            <Button onClick={handleLoadMore}>Load More</Button>
           )}
         </>
       )}
-    </Wrapper>
+    </Section>
   );
 };
 
 export default Catalog;
 
-const Wrapper = styled.div`
-  padding: 32px;
-`;
+// const Wrapper = styled.div`
+//   padding: 32px;
+// `;
 
-const Title = styled.h1`
-  margin-bottom: 24px;
-`;
+// const Title = styled.h1`
+//   margin-bottom: 24px;
+// `;
 
 const CardGrid = styled.div`
   display: flex;
@@ -60,18 +59,18 @@ const CardGrid = styled.div`
   gap: 24px;
 `;
 
-const LoadMoreButton = styled.button`
-  margin: 24px auto 0;
-  display: block;
-  padding: 12px 24px;
-  background-color: #3470ff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
+// const LoadMoreButton = styled.button`
+//   margin: 24px auto 0;
+//   display: block;
+//   padding: 12px 24px;
+//   background-color: #3470ff;
+//   color: white;
+//   border: none;
+//   border-radius: 6px;
+//   cursor: pointer;
+//   font-size: 16px;
 
-  &:hover {
-    background-color: #2659d8;
-  }
-`;
+//   &:hover {
+//     background-color: #2659d8;
+//   }
+// `;

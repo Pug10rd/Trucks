@@ -1,18 +1,22 @@
 import styled from "styled-components";
+import Icon from "./ui/Icon";
 
 const CamperCard = ({ camper }) => {
   const { name, price, location, gallery, description } = camper;
 
-  console.log(camper);
-
   return (
     <Card>
-      <Image src={gallery[0]} alt={name} />
+      {gallery?.[0]?.thumb && (
+        <Image src={camper.gallery[0].thumb} alt={camper.name} />
+      )}
       <Content>
         <Title>{name}</Title>
         <InfoRow>
-          <Price>€{price.toLocaleString("en-US")},00</Price>
-          <Location>{location}</Location>
+          <Price>€{price?.toLocaleString("en-US")},00</Price>
+          <Location>
+            <Icon name={"map"} size={16} />
+            {location}
+          </Location>
         </InfoRow>
         <Description>{description}</Description>
         <Buttons>
