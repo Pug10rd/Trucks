@@ -19,6 +19,8 @@ import {
 } from "./CamperCard.styled";
 import Icon from "../Icon";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleFavorite } from "../../../redux/favorites/favoritesSlice";
 
 const AMENITIES_MAP = [
   { key: "AC", label: "AC", icon: "ac" },
@@ -35,7 +37,10 @@ const AMENITIES_MAP = [
 ];
 
 const CamperCard = ({ camper }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const favoriteIds = useSelector((state) => state.favorites.favoriteItems);
+  const isFavorite = favoriteIds.includes(camper.id);
   const {
     name,
     price,
@@ -121,8 +126,17 @@ const CamperCard = ({ camper }) => {
           </div>
           <PriceRow>
             <Price>€{price}.00</Price>
-            <FavoriteButton>
-              <Icon name="heart" width={26} height={24} />
+            <FavoriteButton
+              aria-label={
+                isFavorite ? "Remove from favorites" : "Add to favorites"
+              }
+              onClick={() => dispatch(toggleFavorite(camper.id))}
+            >
+              <Icon
+                name={isFavorite ? "heart-pressed" : "heart"}
+                width={26}
+                height={24}
+              />
             </FavoriteButton>
           </PriceRow>
         </Header>

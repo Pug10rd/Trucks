@@ -7,7 +7,7 @@ const Navigation = ({ position }) => {
       <StyledNavLink $position={position} to="/">
         <Text>Home</Text>
       </StyledNavLink>
-      <StyledNavLink $position={position} to="/catalog" end>
+      <StyledNavLink $position={position} to="/catalog">
         <Text>Catalog</Text>
       </StyledNavLink>
       <StyledNavLink $position={position} to="/favorites">
