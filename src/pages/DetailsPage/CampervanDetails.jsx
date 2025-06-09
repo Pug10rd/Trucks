@@ -55,7 +55,6 @@ const CampervanDetails = ({ camper }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     setFormData({ name: "", email: "", bookingDate: "", comment: "" });
     toast.success("Booking form was successfully sent!");
   };

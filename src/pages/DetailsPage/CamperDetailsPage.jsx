@@ -1,31 +1,10 @@
-// const {
-//   id,
-//   name,
-//   price,
-//   rating,
-//   reviews,
-//   location,
-//   description,
-//   transmission,
-//   engine,
-//   gallery,
-//   AC,
-//   bathroom,
-//   kitchen,
-//   radio,
-//   refrigerator,
-//   microwave,
-//   gas,
-//   water,
-// } = camper;
-
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCamperById } from "../../redux/campers/campersThunks";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import Gallery from "../../components/ui/camperDetails/Gallery";
-import CampervanDetails from "./CampervanDetails"; // Add this import
+import CampervanDetails from "./CampervanDetails";
 import Icon from "../../components/ui/Icon";
 
 const CamperDetailsPage = () => {

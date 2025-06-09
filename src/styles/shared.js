@@ -20,7 +20,6 @@ export const Button = styled.button`
   letter-spacing: -0.01em;
   transition: border-color var(--transition);
 
-  /* Conditional styling based on variant prop */
   ${(props) =>
     props.$variant === "transparent" &&
     `
