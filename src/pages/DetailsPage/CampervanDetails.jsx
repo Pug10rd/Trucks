@@ -33,6 +33,8 @@ import {
   ReviewText,
 } from "./Reviews.styled";
 import { getType } from "../../utils/mapping";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CampervanDetails = ({ camper }) => {
   const [activeTab, setActiveTab] = useState("features");
@@ -54,6 +56,8 @@ const CampervanDetails = ({ camper }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", bookingDate: "", comment: "" });
+    toast.success("Booking form was successfully sent!");
   };
 
   const features = [
@@ -223,6 +227,7 @@ const CampervanDetails = ({ camper }) => {
           </BookingForm>
         </BookingSection>
       </TabContent>
+      <ToastContainer position="top-center" autoClose={3000} />
     </>
   );
 };
