@@ -42,7 +42,7 @@ const CamperCatalogCards = ({
           style={{ textAlign: "center", margin: "24px 0" }}
         >
           <Button
-            variant="transparent"
+            $variant="transparent"
             width="145px"
             onClick={handleLoadMoreClick}
           >

@@ -22,14 +22,14 @@ export const Button = styled.button`
 
   /* Conditional styling based on variant prop */
   ${(props) =>
-    props.variant === "transparent" &&
+    props.$variant === "transparent" &&
     `
     border: 1px solid var(--color-grayTransp);
     background: transparent;
   `}
 
   ${(props) =>
-    props.variant === "orange" &&
+    props.$variant === "orange" &&
     `
     color: var(--color-white);
     background-color: var(--color-orange);
@@ -44,7 +44,7 @@ export const Button = styled.button`
   &:hover,
   &:focus {
     ${(props) =>
-      props.variant === "transparent" &&
+      props.$variant === "transparent" &&
       `
       border-color: var(--color-orangeDark);
     `}

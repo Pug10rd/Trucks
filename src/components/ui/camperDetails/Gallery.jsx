@@ -43,7 +43,8 @@ export default Gallery;
 
 const GalleryWrapper = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 48px;
+  margin-bottom: 24px;
 `;
 
 const Thumb = styled.div`

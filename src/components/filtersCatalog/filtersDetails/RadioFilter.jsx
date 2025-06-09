@@ -23,9 +23,7 @@ const RadioFilter = ({ onFormChange, value = "" }) => {
   return (
     <Form>
       {options.map(({ value: formValue, label }) => {
-        // Use formValue directly for icon name if mapName returns undefined
         const iconKey = mapName(formValue);
-        console.log("iconKey", iconKey);
         const checked = value === formValue;
         return (
           <Wrapper key={formValue}>

@@ -95,10 +95,10 @@ const FiltersCatalog = () => {
             paddingTop: 24,
           }}
         >
-          <Button variant="orange" width="166px" onClick={handleSearch}>
+          <Button $variant="orange" width="166px" onClick={handleSearch}>
             Search
           </Button>
-          <Button variant="transparent" width="145px" onClick={handleClear}>
+          <Button $variant="transparent" width="145px" onClick={handleClear}>
             Clear
           </Button>
         </ButtonsWrapper>

@@ -32,7 +32,6 @@ const AMENITIES_MAP = [
   { key: "refrigerator", label: "Refrigerator", icon: "fridge" },
   { key: "gas", label: "Gas", icon: "gas" },
   { key: "water", label: "Water", icon: "water" },
-  // Add more amenities and their correct icon names from sprite.svg as needed
 ];
 
 const CamperCard = ({ camper }) => {
@@ -121,7 +120,7 @@ const CamperCard = ({ camper }) => {
             </InfoRow>
           </div>
           <PriceRow>
-            <Price>€{price?.toLocaleString("en-US")}.00</Price>
+            <Price>€{price}.00</Price>
             <FavoriteButton>
               <Icon name="heart" width={26} height={24} />
             </FavoriteButton>
