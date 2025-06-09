@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   location: "",
-  priceRange: [0, 1000],
-  category: null,
+  equipment: [],
+  form: "",
 };
 
 const filtersSlice = createSlice({
