@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Button } from "../../styles/shared";
-import CheckboxFilter from "./filtersDetails/CheckboxFilter";
-import LocationInput from "./filtersDetails/LocationInput";
-import RadioFilter from "./filtersDetails/RadioFilter";
+import { Button } from "../../../styles/shared";
+import CheckboxFilter from "./CheckboxFilter";
+import LocationInput from "./LocationInput";
+import RadioFilter from "./RadioFilter";
 
-import { setFilters, resetFilters } from "../../redux/filters/filtersSlice";
-import { fetchCampers } from "../../redux/campers/campersThunks";
+import { setFilters, resetFilters } from "../../../redux/filters/filtersSlice";
+import { fetchCampers } from "../../../redux/campers/campersThunks";
 
 import {
   Container,
@@ -18,7 +18,7 @@ import {
   FilterTitle,
   ButtonsWrapper,
   FilterBox,
-} from "./FiltersCatalog.styled";
+} from "../FiltersCatalog.styled";
 
 const FiltersCatalog = () => {
   const dispatch = useDispatch();

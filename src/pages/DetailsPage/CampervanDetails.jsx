@@ -54,16 +54,13 @@ const CampervanDetails = ({ camper }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission logic here
   };
 
-  // Map camper features dynamically
   const features = [
     camper.transmission === "automatic" && {
       icon: "transmission",
       label: "Automatic",
     },
-    camper.AC && { icon: "ac", label: "AC" },
     camper.engine === "petrol" && { icon: "petrol", label: "Petrol" },
     camper.kitchen && { icon: "kitchen", label: "Kitchen" },
     camper.radio && { icon: "radio", label: "Radio" },
@@ -83,9 +80,6 @@ const CampervanDetails = ({ camper }) => {
     { label: "Consumption", value: camper.consumption || "12.4l/100km" },
   ];
 
-  console.log(camper);
-
-  // Reviews block
   const reviews = camper.reviews || [];
 
   return (
@@ -182,16 +176,36 @@ const CampervanDetails = ({ camper }) => {
               />
             </FormGroup>
 
-            <FormGroup>
+            <FormGroup style={{ position: "relative" }}>
               <Input
-                type="text"
+                type="date"
                 id="bookingDate"
                 name="bookingDate"
                 value={formData.bookingDate}
                 onChange={handleInputChange}
-                placeholder="Select date"
                 required
+                min={new Date().toISOString().split("T")[0]}
+                style={{
+                  color: formData.bookingDate ? undefined : "#a3a3a3",
+                  zIndex: 2,
+                }}
               />
+              {!formData.bookingDate && (
+                <span
+                  style={{
+                    position: "absolute",
+                    left: 18,
+                    top: 18,
+                    color: "#a3a3a3",
+                    pointerEvents: "none",
+                    fontSize: 16,
+                    fontFamily: "inherit",
+                    zIndex: 1,
+                  }}
+                >
+                  Booking date*
+                </span>
+              )}
             </FormGroup>
 
             <FormGroup>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/campers/campersThunks";
 import CamperCatalogCards from "../../components/camperCatalogCards/CamperCatalogCards";
 import { CatalogContainer } from "./CatalogPage.styled";
-import FiltersCatalog from "../../components/filtersCatalog/FiltersCatalog";
+import FiltersCatalog from "../../components/filtersCatalog/filtersDetails/FiltersCatalog";
 
 const ITEMS_PER_PAGE = 4;
 
